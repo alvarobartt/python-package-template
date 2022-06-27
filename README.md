@@ -7,4 +7,4 @@
 * Type hint checking with `mypy`
 * `Dockerfiles` for both CPU and GPU machines
 * `pre-commit` configuration file
-* GitHub Codespaces can be created from `.devcontainers`
+* GitHub Codespaces can be created from `.devcontainer`
