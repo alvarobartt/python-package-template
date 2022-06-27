@@ -1,10 +1,7 @@
-FROM nvidia/cuda:11.6.0-runtime-ubuntu20.04
+FROM python:3.9-slim
 
 RUN apt-get update \
-    && apt-get install software-properties-common -y \
-    && add-apt-repository ppa:deadsnakes/ppa \
-    && apt install python3.9 python3-pip git -y \
-    && ln -sf /usr/bin/python3.9 /usr/bin/python
+    && apt-get install git -y --no-install-recommends
 
 ENV PYTHONUNBUFFERED=1
 
