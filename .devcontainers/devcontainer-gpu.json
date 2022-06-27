@@ -1,0 +1,12 @@
+{
+	"build": {
+		"dockerfile": "../Dockerfile.gpu"
+	},
+    "runArgs": [
+        "--gpus=all"
+    ],
+	"extensions": [
+		"ms-python.python",
+		"eamodio.gitlens"
+	]
+}

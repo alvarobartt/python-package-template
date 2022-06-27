@@ -1,0 +1,9 @@
+{
+	"build": {
+		"dockerfile": "../Dockerfile"
+	},
+	"extensions": [
+		"ms-python.python",
+		"eamodio.gitlens"
+	]
+}
