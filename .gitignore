@@ -112,3 +112,6 @@ venv.bak/
 .vscode
 .vscode/
 .vscode/*
+
+# Poetry
+*poetry.lock*
