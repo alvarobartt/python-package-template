@@ -1,11 +1,11 @@
-name: push-docker
+name: publish-docker
 
 on:
   push:
     branches:
       - main
     paths:
-      - .github/workflows/push-docker.yaml
+      - .github/workflows/publish-docker.yaml
       - .dockerignore
       - Dockerfile
 
