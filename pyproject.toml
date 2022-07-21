@@ -10,12 +10,12 @@ packages = [
 ]
 description = "Python package description."
 authors = [
-    "Alvaro Bartolome <alvarobartt@yahoo.com>"
+    "Name Surname <email>"
 ]
 readme = "README.md"
-homepage = "https://github.com/alvarobartt/python-package-template"
-documentation = "https://github.com/alvarobartt/python-package-template"
-repository = "https://github.com/alvarobartt/python-package-template"
+homepage = "https://github.com/username/package"
+documentation = "https://github.com/username/package"
+repository = "https://package.readthedocs.io/"
 license = "MIT License"
 
 [tool.poetry.dependencies]
