@@ -3,7 +3,7 @@ FROM nvidia/cuda:11.6.0-runtime-ubuntu20.04
 RUN apt-get update \
     && apt-get install software-properties-common -y \
     && add-apt-repository ppa:deadsnakes/ppa \
-    && apt install python3.9 python3-pip git -y \
+    && apt install python3.9 python3-pip build-essential git -y \
     && ln -sf /usr/bin/python3.9 /usr/bin/python
 
 ENV PYTHONUNBUFFERED=1
