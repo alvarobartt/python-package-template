@@ -16,7 +16,7 @@ jobs:
   check-quality:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.actor }}/${{ github.repository }}:main
+      image: ghcr.io/${{ github.repository }}:main
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
@@ -33,7 +33,7 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.actor }}/${{ github.repository }}:main
+      image: ghcr.io/${{ github.repository }}:main
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
@@ -54,7 +54,7 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/${{ github.actor }}/${{ github.repository }}:main
+      image: ghcr.io/${{ github.repository }}:main
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
