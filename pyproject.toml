@@ -22,11 +22,11 @@ license = "MIT License"
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
-black = "^22.1.0"
+black = "^22.6.0"
 flake8 = "^4.0.1"
 isort = "^5.10.1"
-mypy = "^0.931"
-pre-commit = "^2.17.0"
+mypy = "^0.971"
+pre-commit = "^2.20.0"
 
 [tool.isort]
 profile = "black"
