@@ -7,6 +7,11 @@
     ],
 	"extensions": [
 		"ms-python.python",
-		"eamodio.gitlens"
+		"ms-python.vscode-pylance",
+		"eamodio.gitlens",
+		"bungcip.better-toml",
+		"ms-azuretools.vscode-docker",
+		"zhuangtongfa.material-theme",
+		"redhat.vscode-yaml"
 	]
 }
