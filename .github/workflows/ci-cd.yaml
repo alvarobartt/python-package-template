@@ -62,11 +62,11 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v2
-
-    - name: publish-package
-      run: poetry publish --build
-
+    
     - name: config-pypi
       run: poetry config pypi-token.pypi $PYPI_TOKEN
       env:
         PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+
+    - name: publish-package
+      run: poetry publish --build
