@@ -10,7 +10,7 @@ class TestHelloWorld:
     def setup_method(self, hello_world: str) -> None:
         self.hello_world = hello_world
 
-    def teardown(self):
+    def teardown(self) -> None:
         del self.hello_world
 
     def test_hello_world(self) -> None:
