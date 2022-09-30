@@ -12,6 +12,9 @@
 		"bungcip.better-toml",
 		"ms-azuretools.vscode-docker",
 		"zhuangtongfa.material-theme",
-		"redhat.vscode-yaml"
+		"redhat.vscode-yaml",
+		"tamasfe.even-better-toml",
+		"seatonjiang.gitmoji-vscode",
+		"GitHub.copilot"
 	]
 }
