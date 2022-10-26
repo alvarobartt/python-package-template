@@ -29,25 +29,8 @@ jobs:
       - name: quality
         run: poetry run make quality
 
-  check-types:
-    needs: check-quality
-
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/${{ github.repository }}:main
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-
-      - name: types
-        run: poetry run make types
-
   run-tests:
-    needs: check-types
+    needs: check-quality
 
     runs-on: ubuntu-latest
     container:
