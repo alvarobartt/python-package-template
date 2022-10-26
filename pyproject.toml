@@ -3,19 +3,19 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "package"
+name = "REPLACE_PACKAGE_NAME"
 version = "0.0.1"
 packages = [
-    { include = "package", from = "src" },
+    { include = "REPLACE_PACKAGE_NAME", from = "src" },
 ]
-description = "Python package description."
+description = "REPLACE_PACKAGE_DESCRIPTION"
 authors = [
-    "Name Surname <email>"
+    "REPLACE_NAME REPLACE_SURNAME <REPLACE_EMAIL>"
 ]
 readme = "README.md"
-homepage = "https://github.com/username/package"
-documentation = "https://github.com/username/package"
-repository = "https://package.readthedocs.io/"
+homepage = "https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME"
+documentation = "https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME"
+repository = "https://REPLACE_GITHUB_USERNAME.github.io/REPLACE_PACKAGE_NAME"
 license = "MIT License"
 
 [tool.poetry.dependencies]
