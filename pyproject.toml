@@ -55,8 +55,23 @@ fmt = [
 [tool.hatch.envs.test]
 dependencies = ["pytest~=7.1.2"]
 
+[tool.hatch.envs.test.scripts]
+run = "pytest tests/ --durations 0 -s"
+
 [[tool.hatch.envs.test.matrix]]
 python = ["37", "38", "39", "310"]
 
 [tool.isort]
 profile = "black"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/docs",
+  "/.devcontainer",
+  "/Dockerfile",
+  "/.pre-commit-config.yaml",
+  "/.dockerignore",
+  "/.gitignore",
+  "/tests",
+]
