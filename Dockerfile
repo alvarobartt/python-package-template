@@ -6,9 +6,11 @@ RUN apt-get update \
 ENV PYTHONUNBUFFERED=1
 
 RUN python -m pip install pip --upgrade \
-    && python -m pip install poetry \
-    && python -m poetry config virtualenvs.create false
+    && python -m pip install hatch
 
 COPY . .
 
-RUN python -m poetry install
+# https://github.com/gitpod-io/gitpod/issues/1997
+ENV PIP_USER false
+
+RUN python -m hatch env create

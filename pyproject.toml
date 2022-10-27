@@ -1,50 +1,77 @@
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+build-backend = "hatchling.build"
+requires = ["hatchling"]
 
-[tool.poetry]
-name = "package"
-version = "0.0.1"
-packages = [
-    { include = "package", from = "src" },
+[project]
+authors = [{name = "REPLACE_NAME REPLACE_SURNAME", email = "REPLACE_EMAIL"}]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
 ]
-description = "Python package description."
-authors = [
-    "Name Surname <email>"
-]
+dependencies = []
+description = "REPLACE_PACKAGE_DESCRIPTION"
+dynamic = ["version"]
+keywords = []
+license = "MIT"
+name = "REPLACE_PACKAGE_NAME"
 readme = "README.md"
-homepage = "https://github.com/username/package"
-documentation = "https://github.com/username/package"
-repository = "https://package.readthedocs.io/"
-license = "MIT License"
+requires-python = ">=3.7"
 
-[tool.poetry.dependencies]
-python = "^3.9"
+[project.urls]
+Documentation = "https://REPLACE_GITHUB_USERNAME.github.io/REPLACE_PACKAGE_NAME"
+Issues = "https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME/issues"
+Source = "https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME"
 
-[tool.poetry.dev-dependencies]
-black = "^22.6.0"
-flake8 = "^4.0.1"
-isort = "^5.10.1"
-mypy = "^0.971"
-pre-commit = "^2.20.0"
-pytest = "^7.1.2"
+[tool.hatch.version]
+path = "src/REPLACE_PACKAGE_NAME/__init__.py"
+
+[tool.hatch.envs.style]
+dependencies = [
+  "black~=22.6.0",
+  "flake8~=4.0.1",
+  "isort~=5.10.1",
+  "pre-commit~=2.20.0",
+]
+detached = true
+
+[tool.hatch.envs.style.scripts]
+check = [
+  "flake8 src tests",
+  "black --check --diff --preview src tests airflow/dags",
+  "isort --check-only --diff src tests airflow/dags",
+]
+fmt = [
+  "isort src tests airflow/dags",
+  "black --preview src tests airflow/dags",
+  "check",
+]
+
+[tool.hatch.envs.test]
+dependencies = ["pytest~=7.1.2"]
+
+[tool.hatch.envs.test.scripts]
+run = "pytest tests/ --durations 0 -s"
+
+[[tool.hatch.envs.test.matrix]]
+python = ["37", "38", "39", "310"]
 
 [tool.isort]
 profile = "black"
 
-[tool.mypy]
-# --strict
-disallow_any_generics = true
-disallow_subclassing_any = true
-disallow_untyped_calls = true
-disallow_untyped_defs = true
-disallow_incomplete_defs = true
-check_untyped_defs = true
-disallow_untyped_decorators = true
-no_implicit_optional = true
-warn_redundant_casts = true
-warn_unused_ignores = true
-warn_return_any = true
-implicit_reexport = false
-strict_equality = true
-# --strict end
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/docs",
+  "/.devcontainer",
+  "/Dockerfile",
+  "/.pre-commit-config.yaml",
+  "/.dockerignore",
+  "/.gitignore",
+  "/tests",
+]

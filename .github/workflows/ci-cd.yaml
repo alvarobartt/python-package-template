@@ -14,7 +14,7 @@ on:
       - published
 
 jobs:
-  check-quality:
+  check-style:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/${{ github.repository }}:main
@@ -26,28 +26,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: quality
-        run: poetry run make quality
-
-  check-types:
-    needs: check-quality
-
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/${{ github.repository }}:main
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-
-      - name: types
-        run: poetry run make types
+      - name: style
+        run: hatch run style:fmt
 
   run-tests:
-    needs: check-types
+    needs: check-style
 
     runs-on: ubuntu-latest
     container:
@@ -60,11 +43,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: install-package
-        run: poetry install
-
       - name: tests
-        run: poetry run make tests
+        run: hatch run test:run
 
   publish-package:
     needs: run-tests
@@ -81,10 +61,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: config-pypi
-        run: poetry config pypi-token.pypi $PYPI_TOKEN
-        env:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+      - name: build-package
+        run: hatch build
 
       - name: publish-package
-        run: poetry publish --build
+        run: hatch publish --user REPLACE_PYPI_USER --auth $PYPI_TOKEN
+        env:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
