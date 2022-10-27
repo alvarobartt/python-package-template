@@ -1,6 +1,3 @@
-# Copyright 2022 Name Surname, username @ GitHub
-# See LICENSE for details.
-
 import pytest
 
 
