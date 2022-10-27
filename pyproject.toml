@@ -15,7 +15,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = []
-description = "Python package to retrieve data from arXiv."
+description = "REPLACE_PACKAGE_DESCRIPTION"
 dynamic = ["version"]
 keywords = []
 license = "MIT"
