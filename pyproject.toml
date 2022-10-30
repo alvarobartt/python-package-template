@@ -43,12 +43,12 @@ detached = true
 [tool.hatch.envs.style.scripts]
 check = [
   "flake8 src tests",
-  "black --check --diff --preview src tests airflow/dags",
-  "isort --check-only --diff src tests airflow/dags",
+  "black --check --diff --preview src tests",
+  "isort --check-only --diff src tests",
 ]
 fmt = [
-  "isort src tests airflow/dags",
-  "black --preview src tests airflow/dags",
+  "isort src tests",
+  "black --preview src tests",
   "check",
 ]
 
