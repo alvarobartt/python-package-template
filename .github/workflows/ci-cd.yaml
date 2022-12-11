@@ -14,52 +14,70 @@ on:
       - published
 
 jobs:
-  check-style:
+  check-quality:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/${{ github.repository }}:main
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: style
-        run: hatch run style:fmt
+      - name: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: install-dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ".[quality]"
+
+      - name: check-quality
+        run: |
+          flake8 src tests
+          black --check --diff --preview src tests
+          isort --check-only --diff src tests
 
   run-tests:
-    needs: check-style
+    needs: check-quality
 
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/${{ github.repository }}:main
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: tests
-        run: hatch run test:run
+      - name: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: install-dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ".[tests]"
+
+      - name: run-tests
+        run: pytest tests/ -s --durations 0
 
   publish-package:
     needs: run-tests
     if: github.event_name == 'release'
 
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/${{ github.repository }}:main
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: install-dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install hatch
 
       - name: build-package
         run: hatch build
