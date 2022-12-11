@@ -18,4 +18,3 @@
 * `REPLACE_SURNAME`: user's surname.
 * `REPLACE_EMAIL`: user's email.
 * `REPLACE_GITHUB_USERNAME`: GitHub username of the package owner.
-* `REPLACE_PYPI_USER`: PyPI user to upload the package to its repository.
