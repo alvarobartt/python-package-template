@@ -112,3 +112,8 @@ venv.bak/
 .vscode
 .vscode/
 .vscode/*
+
+# Hatch files
+.hatch
+.hatch/
+.hatch/*
