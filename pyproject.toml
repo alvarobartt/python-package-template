@@ -43,10 +43,9 @@ tests = [
 ]
 
 [tool.hatch.envs.quality]
-dependencies = [
-  "REPLACE_PACKAGE_NAME[quality]"
+features = [
+  "quality",
 ]
-detached = true
 
 [tool.hatch.envs.quality.scripts]
 check = [
@@ -61,7 +60,9 @@ format = [
 ]
 
 [tool.hatch.envs.test]
-dependencies = ["REPLACE_PACKAGE_NAME[tests]"]
+features = [
+  "tests",
+]
 
 [tool.hatch.envs.test.scripts]
 run = "pytest tests/ --durations 0 -s"
