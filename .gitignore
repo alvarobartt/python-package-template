@@ -104,16 +104,13 @@ venv.bak/
 .mypy_cache/
 
 # PyCharm default idea folder
-.idea
 .idea/
-.idea/*
 
 # VSCode Files
-.vscode
 .vscode/
-.vscode/*
 
 # Hatch files
-.hatch
 .hatch/
-.hatch/*
+
+# Ruff cache
+.ruff_cache/
