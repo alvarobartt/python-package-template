@@ -48,12 +48,11 @@ features = [
 
 [tool.hatch.envs.quality.scripts]
 check = [
-  "flake8 src tests",
+  "ruff src tests",
   "black --check --diff --preview src tests",
-  "isort --check-only --diff src tests",
 ]
 format = [
-  "isort src tests",
+  "ruff --fix src tests",
   "black --preview src tests",
   "check",
 ]
