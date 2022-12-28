@@ -3,7 +3,7 @@
 ## ✨ Features
 
 * Package configuration with `pyproject.toml` built with `hatch`
-* Code formatting with `black`, `isort`, and `flake8`
+* Code formatting and linting with `ruff`, and `black`
 * `Dockerfile` with package installation
 * `pre-commit` configuration file
 * GitHub Codespaces can be created from `.devcontainer`

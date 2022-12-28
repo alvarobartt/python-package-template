@@ -33,9 +33,8 @@ path = "src/REPLACE_PACKAGE_NAME/__init__.py"
 
 [project.optional-dependencies]
 quality = [
-  "black~=22.6.0",
-  "flake8~=4.0.1",
-  "isort~=5.10.1",
+  "black~=22.10.0",
+  "ruff~=0.0.194",
   "pre-commit~=2.20.0",
 ]
 tests = [
@@ -59,6 +58,24 @@ format = [
   "check",
 ]
 
+[tool.ruff]
+ignore = [
+  "E501", # line too long, handled by black
+  "B008", # do not perform function calls in argument defaults
+  "C901", # too complex
+]
+select = [
+  "E", # pycodestyle errors
+  "W", # pycodestyle warnings
+  "F", # pyflakes
+  "I", # isort
+  "C", # flake8-comprehensions
+  "B", # flake8-bugbear
+]
+
+[tool.ruff.isort]
+known-first-party = ["REPLACE_PACKAGE_NAME"]
+
 [tool.hatch.envs.test]
 features = [
   "tests",
@@ -70,15 +87,15 @@ run = "pytest tests/ --durations 0 -s"
 [[tool.hatch.envs.test.matrix]]
 python = ["37", "38", "39", "310"]
 
-[tool.isort]
-profile = "black"
-
 [tool.hatch.build.targets.sdist]
 exclude = [
   "/.github",
+  "/.vscode",
   "/docs",
   "/.devcontainer",
   "/.pre-commit-config.yaml",
   "/.gitignore",
   "/tests",
+  "/Dockerfile",
+  "/.dockerignore",
 ]
