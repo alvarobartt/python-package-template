@@ -1,0 +1,51 @@
+site_name: REPLACE_PACKAGE_NAME
+site_url: https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME
+site_author: REPLACE_NAME REPLACE_SURNAME
+site_description: REPLACE_PACKAGE_DESCRIPTION
+
+repo_name: REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME
+repo_url: https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME
+
+copyright: Copyright (c) 2022-present REPLACE_NAME REPLACE_SURNAME <REPLACE_EMAIL>
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+plugins:
+  - search:
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+  - mkdocstrings:
+
+extra:
+  social:
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/REPLACE_PACKAGE_NAME/
+    - icon: fontawesome/brands/github
+      link: https://github.com/REPLACE_GITHUB_USERNAME
+    # - icon: fontawesome/brands/twitter
+    #   link: https://twitter.com/REPLACE_TWITTER_USERNAME
+    # - icon: fontawesome/brands/linkedin
+    #   link: https://www.linkedin.com/in/REPLACE_LINKEDIN_USERNAME/
+
+nav:
+  - Home: index.md
+  - License: license.md
