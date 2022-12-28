@@ -32,6 +32,12 @@ Source = "https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME"
 path = "src/REPLACE_PACKAGE_NAME/__init__.py"
 
 [project.optional-dependencies]
+docs = [
+  "mkdocs~=1.4.0",
+  "mkdocs-material~=8.5.4",
+  "mkdocs-git-revision-date-localized-plugin~=1.1.0",
+  "mkdocstrings[python]~=0.19.0",
+]
 quality = [
   "black~=22.10.0",
   "ruff~=0.0.194",
@@ -85,6 +91,19 @@ run = "pytest tests/ --durations 0 -s"
 
 [[tool.hatch.envs.test.matrix]]
 python = ["37", "38", "39", "310"]
+
+[tool.hatch.envs.docs]
+features = [
+  "docs",
+]
+
+[tool.hatch.envs.docs.scripts]
+build = [
+  "mkdocs build",
+]
+serve = [
+  "mkdocs serve",
+]
 
 [tool.hatch.build.targets.sdist]
 exclude = [
