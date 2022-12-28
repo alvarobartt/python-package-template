@@ -9,6 +9,7 @@
 * GitHub Codespaces can be created from `.devcontainer`
 * CI-CD Pipelines with GitHub Actions
 * Basic `pytest` set-up for unit tests
+* Auto-generated docs with `mkdocs` and `mkdocs-material`
 
 ## 🚚 Replacements
 
