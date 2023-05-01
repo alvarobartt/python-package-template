@@ -1,12 +1,12 @@
 site_name: REPLACE_PACKAGE_NAME
 site_url: https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME
-site_author: REPLACE_NAME REPLACE_SURNAME
+site_author: REPLACE_FULL_NAME
 site_description: REPLACE_PACKAGE_DESCRIPTION
 
 repo_name: REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME
 repo_url: https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME
 
-copyright: Copyright (c) 2022-present REPLACE_NAME REPLACE_SURNAME <REPLACE_EMAIL>
+copyright: Copyright (c) 2022-present REPLACE_FULL_NAME <REPLACE_EMAIL>
 
 theme:
   name: material
