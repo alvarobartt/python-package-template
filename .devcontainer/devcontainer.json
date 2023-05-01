@@ -2,15 +2,30 @@
 	"build": {
 		"dockerfile": "../Dockerfile"
 	},
-	"extensions": [
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"eamodio.gitlens",
-		"bungcip.better-toml",
-		"ms-azuretools.vscode-docker",
-		"zhuangtongfa.material-theme",
-		"redhat.vscode-yaml",
-		"GitHub.copilot",
-		"znck.grammarly"
-	]
+	"customizations": {
+		"codespaces": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"eamodio.gitlens",
+				"bungcip.better-toml",
+				"ms-azuretools.vscode-docker",
+				"zhuangtongfa.material-theme",
+				"redhat.vscode-yaml",
+				"GitHub.copilot"
+			]
+		},
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"eamodio.gitlens",
+				"bungcip.better-toml",
+				"ms-azuretools.vscode-docker",
+				"zhuangtongfa.material-theme",
+				"redhat.vscode-yaml",
+				"GitHub.copilot"
+			]
+		}
+	}
 }
