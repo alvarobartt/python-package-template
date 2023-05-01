@@ -40,7 +40,7 @@ docs = [
 ]
 quality = [
   "black~=22.10.0",
-  "ruff~=0.0.194",
+  "ruff~=0.0.263",
   "pre-commit~=2.20.0",
 ]
 tests = [
