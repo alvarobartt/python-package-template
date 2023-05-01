@@ -63,6 +63,7 @@ jobs:
 
   deploy-docs:
     needs: run-tests
+    if: github.event_name == 'release'
 
     runs-on: ubuntu-latest
 
