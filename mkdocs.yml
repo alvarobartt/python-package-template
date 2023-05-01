@@ -6,7 +6,7 @@ site_description: REPLACE_PACKAGE_DESCRIPTION
 repo_name: REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME
 repo_url: https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME
 
-copyright: Copyright (c) 2022-present REPLACE_FULL_NAME <REPLACE_EMAIL>
+copyright: Copyright (c) 2023-present REPLACE_FULL_NAME <REPLACE_EMAIL>
 
 theme:
   name: material
