@@ -54,12 +54,12 @@ features = [
 
 [tool.hatch.envs.quality.scripts]
 check = [
-  "ruff src tests",
   "black --check --diff --preview src tests",
+  "ruff src tests",
 ]
 format = [
-  "ruff --fix src tests",
   "black --preview src tests",
+  "ruff --fix src tests",
   "check",
 ]
 
