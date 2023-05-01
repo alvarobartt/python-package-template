@@ -7,10 +7,10 @@ authors = [{name = "REPLACE_FULL_NAME"}]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
-  "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
@@ -21,7 +21,7 @@ keywords = []
 license = "MIT"
 name = "REPLACE_PACKAGE_NAME"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.8,<3.12"
 
 [project.urls]
 Documentation = "https://REPLACE_GITHUB_USERNAME.github.io/REPLACE_PACKAGE_NAME"
@@ -81,16 +81,16 @@ select = [
 [tool.ruff.isort]
 known-first-party = ["REPLACE_PACKAGE_NAME"]
 
-[tool.hatch.envs.test]
+[tool.hatch.envs.tests]
 features = [
   "tests",
 ]
 
-[tool.hatch.envs.test.scripts]
+[tool.hatch.envs.tests.scripts]
 run = "pytest tests/ --durations 0 -s"
 
-[[tool.hatch.envs.test.matrix]]
-python = ["37", "38", "39", "310"]
+[[tool.hatch.envs.tests.matrix]]
+python = ["38", "39", "310", "311"]
 
 [tool.hatch.envs.docs]
 features = [
