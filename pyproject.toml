@@ -5,6 +5,13 @@ requires = ["hatchling"]
 [project]
 authors = [{name = "REPLACE_FULL_NAME"}]
 classifiers = [
+  "Topic :: Internet",
+  "Topic :: Software Development :: Libraries :: Application Frameworks",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.8",
@@ -40,8 +47,9 @@ docs = [
 ]
 quality = [
   "black~=22.10.0",
-  "ruff~=0.0.263",
+  "mypy~=1.4.0",
   "pre-commit~=2.20.0",
+  "ruff~=0.0.263",
 ]
 tests = [
   "pytest~=7.1.2",
@@ -62,6 +70,15 @@ format = [
   "ruff --fix src tests",
   "check",
 ]
+typecheck = [
+  "mypy src --install-types --non-interactive",
+]
+
+[tool.mypy]
+python_version = "3.8"
+check_untyped_defs = true
+ignore_missing_imports = true
+warn_return_any = true
 
 [tool.ruff]
 ignore = [
