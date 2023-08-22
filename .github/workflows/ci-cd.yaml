@@ -16,6 +16,10 @@ on:
     types:
       - published
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   check-quality:
     runs-on: ubuntu-latest
@@ -38,6 +42,7 @@ jobs:
         run: |
           black --check --diff --preview src tests
           ruff src tests
+          mypy src
 
   run-tests:
     needs: check-quality
@@ -59,7 +64,7 @@ jobs:
           pip install ".[tests]"
 
       - name: run-tests
-        run: pytest tests/ -s --durations 0
+        run: pytest --cov=REPLACE_PACKAGE_NAME --cov-report=term-missing tests/ -s --durations 0
 
   deploy-docs:
     needs: run-tests
