@@ -53,6 +53,7 @@ quality = [
 ]
 tests = [
   "pytest~=7.1.2",
+  "pytest-cov~=4.1",
 ]
 
 [tool.hatch.envs.quality]
@@ -104,7 +105,7 @@ features = [
 ]
 
 [tool.hatch.envs.tests.scripts]
-run = "pytest tests/ --durations 0 -s"
+run = "pytest --cov=REPLACE_PACKAGE_NAME --cov-report=term-missing tests/ --durations 0 -s"
 
 [[tool.hatch.envs.tests.matrix]]
 python = ["38", "39", "310", "311"]
